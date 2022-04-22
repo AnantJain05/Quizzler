@@ -42,9 +42,15 @@ function timer(){
 
 function end(){
   document.getElementById("question").innerHTML = `QUIZ COMPLETED<br> YOUR FINAL SCORE IS ${score}`;
-  for (var i=0; i<5; i++){
-    document.querySelectorAll(".btn")[i].style.display = "hide";
+  document.querySelector(".next").innerHTML = "GO TO HOME";
+  document.querySelector(".next").onclick = goToHome;
+  for (var i=0; i<4; i++){
+    document.querySelectorAll(".options")[i].style.display = "none";
   }
+}
+
+function goToHome(){
+  document.querySelector(".next").onclick = window.location.href='./index.html'; ;
 }
 
 function nextQues(){
